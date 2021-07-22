@@ -7,4 +7,4 @@ These shaders will make even the best shaders look terrible!<br>
 - Special thanks to Eclipse#7433 and [FluffyPets#7236](https://github.com/DestinyTheGreat) for help with equations
 
 # Disclaimer
-*This is a joke/cursed shader. Do not ask me why your world is messed up (unless it's a bug).*
+*This is a joke/cursed shader.*
