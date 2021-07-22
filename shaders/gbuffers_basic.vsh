@@ -14,18 +14,16 @@ out vec4 glcolor;
 
 void main() {
 	vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-	vec3 blockpos = position.xyz;
+	vec3 blockPos = position.xyz;
 	
 	if (Toggle == 0) {
-		blockpos += cameraPosition;
+		blockPos += cameraPosition;
 	}
 	
 	if (mc_Entity.x != 1) {
-		position.y = 2 * sin(blockpos.x * 0.5
-		+ blockpos.z * 0.7) + position.y;
+		position.y = 2 * sin(blockPos.x * 0.5 + blockPos.z * 0.7) + position.y;
 	} else {
-		position.y = 2 * cos(blockpos.x * 0.5
-		+ blockpos.z * 2.5) + position.y;
+		position.y = 2 * cos(blockPos.x * 0.5 + blockPos.z * 2.5) + position.y;
 	}
 
 	gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
