@@ -1,6 +1,6 @@
 #version 150
 
-#define Toggle 1 //testing [0 1]
+#define Toggle 0 //testing [0 1]
 
 uniform mat4 gbufferModelView;
 uniform mat4 gbufferModelViewInverse;
@@ -16,7 +16,7 @@ void main() {
 	vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
 	vec3 blockPos = position.xyz;
 	
-	if (Toggle == 0) {
+	if (Toggle == 1) {
 		blockPos += cameraPosition;
 	}
 	
