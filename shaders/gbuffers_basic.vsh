@@ -1,5 +1,7 @@
 #version 150
 
+#define Toggle 1 //testing [0 1]
+
 uniform mat4 gbufferModelView;
 uniform mat4 gbufferModelViewInverse;
 uniform float frameTimeCounter;
@@ -12,7 +14,11 @@ out vec4 glcolor;
 
 void main() {
 	vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-	vec3 blockpos = position.xyz + cameraPosition;
+	vec3 blockpos = position.xyz;
+	
+	if (Toggle == 0) {
+		blockpos += cameraPosition;
+	}
 	
 	if (mc_Entity.x != 1) {
 		position.y = 2 * sin(blockpos.x * 0.5
