@@ -7,21 +7,19 @@ uniform mat4 gbufferModelViewInverse;
 uniform float frameTimeCounter;
 uniform vec3 cameraPosition;
 
-attribute vec2 mc_Entity;
-
 out vec2 texcoord;
 out vec2 lmcoord;
 out vec4 glcolor;
 
 void main() {
 	vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-	vec3 blockPos = position.xyz;
+	vec3 entityPos = position.xyz;
 
 	#ifdef STATIC_WAVES // make the waves render relative to the camera's position
-		blockPos += cameraPosition;
+		entityPos += cameraPosition;
 	#endif
 	
-	position.y = 2 * sin(blockPos.x * 0.5 + blockPos.z * 0.7) + position.y;
+	position.y = 2 * sin(entityPos.x * 0.5 + entityPos.z * 0.7) + position.y;
 
 	gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
 	texcoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;

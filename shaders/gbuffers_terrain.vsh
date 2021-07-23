@@ -21,7 +21,11 @@ void main() {
 		blockPos += cameraPosition;
 	#endif
 	
-	position.y = 2 * sin(blockPos.x * 0.5 + blockPos.z * 0.7) + position.y;
+	if (mc_Entity.x != 1) {
+		position.y = 2 * sin(blockPos.x * 0.5 + blockPos.z * 0.7) + position.y;
+	} else {
+		position.y = 2 * cos(blockPos.x * 0.5 + blockPos.z * 2.5) + position.y;
+	}
 
 	gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
 	texcoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
