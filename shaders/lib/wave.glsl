@@ -4,7 +4,7 @@
 
 // #define STATIC_WAVES
 
-#define BLOCK_X_MAX_HEIGHT 0.35
+#define BLOCK_X_MAX_HEIGHT -0.25
 #define WATER_X_MAX_HEIGHT 0.25
 #define BLOCK_Z_MAX_HEIGHT 0.25
 #define WATER_Z_MAX_HEIGHT 2.5
