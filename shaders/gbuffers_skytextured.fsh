@@ -1,5 +1,5 @@
 #version 150
 
-#define VERT
+#define FRAG
 
 #include "/lib/generic_textured.glsl"
