@@ -1,7 +1,7 @@
 # Cursed Shaderpack
 Ever wanted to vomit while playing Minecraft? Too bad!<br>
 These shaders will make even the best shaders look terrible!<br>
-***NOTE:** REQUIRES IRIS!*
+__***NOTE:** REQUIRES IRIS!*__
 
 # Credits
 - Inspired by XorDev's Trippy Shader!
