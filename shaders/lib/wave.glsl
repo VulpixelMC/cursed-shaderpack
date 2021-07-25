@@ -4,10 +4,10 @@
 
 // #define STATIC_WAVES
 
-#define BLOCK_X_MAX_HEIGHT -0.25
-#define WATER_X_MAX_HEIGHT 0.25
-#define BLOCK_Z_MAX_HEIGHT 0.25
-#define WATER_Z_MAX_HEIGHT 2.5
+#define BLOCK_MAX_HEIGHT -0.375
+#define WATER_MAX_HEIGHT 0.25
+#define BLOCK_MIN_HEIGHT 0.375
+#define WATER_MIN_HEIGHT 2.5
 
 uniform mat4 gbufferModelView;
 uniform mat4 gbufferModelViewInverse;
@@ -31,10 +31,10 @@ void main() {
 	#ifdef CHECK_FLUID
 	if (mc_Entity.x != 1) {
 	#endif
-		position.y = sin(blockPos.x * BLOCK_X_MAX_HEIGHT + blockPos.z * BLOCK_Z_MAX_HEIGHT) + position.y;
+		position.y = sin(blockPos.x * BLOCK_MAX_HEIGHT + blockPos.z * BLOCK_MIN_HEIGHT) + position.y;
 	#ifdef CHECK_FLUID
 	} else {
-		position.y = cos(blockPos.x * WATER_X_MAX_HEIGHT - blockPos.z * WATER_Z_MAX_HEIGHT) + position.y - 1;
+		position.y = cos(blockPos.x * WATER_MAX_HEIGHT - blockPos.z * WATER_MIN_HEIGHT) + position.y - 1;
 	}
 	#endif
 
