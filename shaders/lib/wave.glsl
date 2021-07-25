@@ -4,11 +4,11 @@
 
 // #define STATIC_WAVES
 
-#define BLOCK_MAX_HEIGHT -0.5
-#define WATER_MAX_HEIGHT 0.25
-#define BLOCK_MIN_HEIGHT 0.5
-#define WATER_MIN_HEIGHT 2.5
-#define AMPLITUDE 2
+#define BLOCK_MAX_HEIGHT -0.5 // [-2.5 2.5]
+#define WATER_MAX_HEIGHT 0.25 // [-2.5 2.5]
+#define BLOCK_MIN_HEIGHT 0.5 // [-2.5 2.5]
+#define WATER_MIN_HEIGHT 2.5 // [-2.5 2.5]
+#define AMPLITUDE 2 // [1 8]
 
 uniform mat4 gbufferModelView;
 uniform mat4 gbufferModelViewInverse;
