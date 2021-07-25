@@ -12,8 +12,8 @@ void main() {
 	vec4 position = gbufferModelViewInverse * (gl_ModelViewMatrix * gl_Vertex);
 	
 	position.y = -tan(frameTimeCounter) + position.y;
+	
 	gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
-
 	texcoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
 	glcolor = gl_Color;
 }
