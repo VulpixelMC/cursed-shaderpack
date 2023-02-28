@@ -1,4 +1,4 @@
-#version 150
+#version 140
 
 uniform float viewHeight;
 uniform float viewWidth;

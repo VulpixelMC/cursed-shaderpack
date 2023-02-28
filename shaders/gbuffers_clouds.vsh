@@ -1,4 +1,4 @@
-#version 150
+#version 140
 
 uniform mat4 gbufferModelView;
 uniform mat4 gbufferModelViewInverse;

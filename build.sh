@@ -1,14 +1,15 @@
 #!/bin/bash
-VERSION=0.2.0
+VERSION=0.2.1
 NAME="Cursed Shaderpack"
+FILE="$NAME $VERSION.zip"
 
 # clean old files
-if [ -f "$NAME $VERSION.zip" ]; then
-    rm "./$NAME $VERSION.zip"
+if [ -f "./.build/$FILE" ]; then
+	rm "./.build/$FILE"
 fi
 
 if [ ! -f ".build" ]; then
-	mkdir ./.build
+	mkdir .build
 fi
 
 # copy build files
@@ -20,15 +21,16 @@ if [ ! -f "README.md" ]; then
 	cp README.md .build
 fi
 
-cp -r shaders .build
+# copy shaders
+cp -r ./shaders .build
 
 # zip shader
-zip -r "$NAME $VERSION.zip" .build/*
+cd ./.build; zip -r "../$FILE" ./*; cd ..
 
 # clean build dir
 rm -rf .build
 
 # put zip into build dir
 mkdir .build
-cp "$NAME $VERSION.zip" .build
-rm "$NAME $VERSION.zip"
+cp "$FILE" .build
+rm "$FILE"
